@@ -1,10 +1,29 @@
+class Task {
+	constructor(s, o1, o2, o3) {
+		this.scenario = s;
+		this.optionOne = o1;
+		this.optionTwo = o2;
+		this.optionThree = o3;
+	}
+}
+
+let taskOne = new Task("Task 1", "O1 T1", "O2 T2", "O3 T3");
+let taskTwo = new Task("Task 1", "O1 T1", "O2 T2", "O3 T3");
+let taskThree = new Task("Task 1", "O1 T1", "O2 T2", "O3 T3");
+let taskFour = new Task("Task 1", "O1 T1", "O2 T2", "O3 T3");
+let taskFive = new Task("Task 1", "O1 T1", "O2 T2", "O3 T3");
+
+console.log(taskTwo);
+ 
 let peasant = {
-	first: "P Task 1",
-	second: "P Task 2",
-	third: "P Task 3",
-	fourth: "P Task 4",
-	fifth: "P Task 5"
+	first: taskOne,
+	second: taskTwo,
+	third: taskThree,
+	fourth: taskFour,
+	fifth: taskFive
 };
+
+console.log(peasant);
 
 let landOwner = {
 	first: "O Task 1",
@@ -37,3 +56,4 @@ let king = {
 	fourth: "Ki Task 4",
 	fifth: "Ki Task 5"
 };
+
