@@ -13,6 +13,15 @@ let taskThree = new Task("Task 1", "O1 T1", "O2 T2", "O3 T3");
 let taskFour = new Task("Task 1", "O1 T1", "O2 T2", "O3 T3");
 let taskFive = new Task("Task 1", "O1 T1", "O2 T2", "O3 T3");
 
+let scenarioUI = document.getElementById("scenario");
+let answerOneUi = document.getElementById("answerOne");
+let answerTwoUi = document.getElementById("answerTwo");
+let answerThreeUi = document.getElementById("answerThree");
+scenarioUI.textContent = taskOne.scenario;
+answerOneUi.textContent = taskOne.optionOne;
+answerTwoUi.textContent = taskOne.optionTwo;
+answerThreeUi.textContent = taskOne.optionThree;
+
 console.log(taskTwo);
  
 let peasant = {
