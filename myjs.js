@@ -60,7 +60,8 @@ let levelUi;
 function nextTaskOne() {
 	let theOption = arr[status].optionOne;
 
-	gold += theOption.optionGold;
+
+	gold = gold + theOption.oppGold;
 	
 	if (theOption.oppDead) {
 		gameOver();
@@ -171,6 +172,8 @@ function init() {
 }
 
 function displayTask(myStatus) {
+	goldUi.textContent = gold;
+	levelUi.textContent = currentLevel;
 	scenarioUI.textContent = arr[myStatus].scenario;
 	answerOneUi.textContent = arr[myStatus].optionOne.description;
 	answerTwoUi.textContent = arr[myStatus].optionTwo.description;
