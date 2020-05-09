@@ -21,6 +21,8 @@ let optSelected = 0;
 let gameOverVar = false;
 //level of user - i.e. peasent/king etc
 let currentLevel = 1;
+//Change this if add more tasks per level
+let numberOfQuestionsPerLevel = 3;
 //stores variable of whether user promoted. Maybe not needed?
 let promoted = false;
 
@@ -65,23 +67,23 @@ function nextTaskOne() {
 		switch (currentLevel) {
 			case 1:
 				currentLevel++;
-				status = 3;
+				status = numberOfQuestionsPerLevel;
 				console.log(status);
 				displayTask(status);
 				break;
 			case 2:
 				currentLevel++;
-				status = 6;
+				status = numberOfQuestionsPerLevel * 2;
 				displayTask(status);
 				break;
 			case 3:
 				currentLevel++;
-				status = 9;
+				status = numberOfQuestionsPerLevel * 3;
 				displayTask(status);
 				break;
 			case 4:
 				currentLevel++;
-				status = 12;
+				status = numberOfQuestionsPerLevel * 4;
 				displayTask(status);
 				break;
 			case 5:
