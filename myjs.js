@@ -18,10 +18,11 @@ class Option {
 
 let status = 0;
 let optSelected = 0;
+let gameOverVar = false;
 
 
 
-let taskOne = new Task("Task 1", new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskOne = new Task("Task 1", new Option("O1 T1", true, 5, true), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
 let taskTwo = new Task("Task 2", new Option("O1 T2", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
 let taskThree = new Task("Task 3", new Option("O1 T3", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
 let taskFour = new Task("Task 4", new Option("O1 T4", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
@@ -33,13 +34,56 @@ let scenarioUI;
 let answerOneUi;
 let answerTwoUi;
 let answerThreeUi;
+let resultUI;
+let buttonTryAgain;
 
-function nextTask() {
+function nextTaskOne() {
+	let theOption = arr[status].optionOne;
+	if (theOption.oppDead) {
+		gameOver();
+		gameOverVar = true;
+
+	}
+
+	if (!gameOverVar) {
+		if (status < arr.length - 1) {
+		status++;
+
+	}
+	displayTask(status);
+	}
+
+	
+}
+
+function gameOver() {
+	resultUI.textContent = "You Died";
+	resultUI.style.display = 'block';
+	buttonTryAgain.style.display = 'block';
+	answerOneUi.style.display = 'none';
+	answerTwoUi.style.display = 'none';
+	answerThreeUi.style.display = 'none';
+}
+
+function nextTaskTwo() {
+	let theOption = arr[status].optionTwo;
 	if (status < arr.length - 1) {
 		status++;
 
 	}
 	displayTask(status);
+}
+function nextTaskThree() {
+	let theOption = arr[status].optionThree;
+	if (status < arr.length - 1) {
+		status++;
+
+	}
+	displayTask(status);
+}
+
+function retryTasks() {
+	console.log("retry");
 }
 
 
@@ -48,10 +92,15 @@ function init() {
 	answerOneUi = document.getElementById("answerOne");
 	answerTwoUi = document.getElementById("answerTwo");
 	answerThreeUi = document.getElementById("answerThree");
+	resultUI = document.getElementById("resultElement");
+	buttonTryAgain = document.getElementById("buttonRetry");
+	buttonTryAgain.style.display = 'none';
+	resultUI.style.display = 'none';
 	displayTask(status)
-	answerOneUi.onclick = nextTask;
-	answerTwoUi.onclick = nextTask;
-	answerThreeUi.onclick = nextTask;
+	answerOneUi.onclick = nextTaskOne;
+	answerTwoUi.onclick = nextTaskTwo;
+	answerThreeUi.onclick = nextTaskThree;
+	buttonTryAgain.onclick = retryTasks;
 }
 
 function displayTask(myStatus) {
