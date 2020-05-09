@@ -19,6 +19,10 @@ class Option {
 let status = 0;
 let optSelected = 0;
 let gameOverVar = false;
+//level of user - i.e. peasent/king etc
+let currentLevel = 1;
+//stores variable of whether user promoted. Maybe not needed?
+let promoted = false;
 
 
 
@@ -27,6 +31,16 @@ let taskTwo = new Task("Task 2", new Option("O1 T2", true, 5, false), new Option
 let taskThree = new Task("Task 3", new Option("O1 T3", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
 let taskFour = new Task("Task 4", new Option("O1 T4", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
 let taskFive = new Task("Task 5", new Option("O1 T5", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskSix = new Task("Task 1", new Option("O1 T6", true, 5, true), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskSeven = new Task("Task 2", new Option("O1 T7", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskEight = new Task("Task 3", new Option("O1 T8", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskNine = new Task("Task 4", new Option("O1 T9", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskTen = new Task("Task 5", new Option("O1 T10", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskEleven = new Task("Task 1", new Option("O1 T11", true, 5, true), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskTwelve = new Task("Task 2", new Option("O1 T12", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskThirteen = new Task("Task 3", new Option("O1 T13", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskFourteen = new Task("Task 4", new Option("O1 T14", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskFifteen = new Task("Task 5", new Option("O1 T15", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
 
 const arr = [taskOne, taskTwo, taskThree, taskFour, taskFive];
 
