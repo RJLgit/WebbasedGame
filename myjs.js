@@ -24,6 +24,11 @@ let answerOneUi;
 let answerTwoUi;
 let answerThreeUi;
 
+function nextTask() {
+	status++;
+	displayTask(status);
+}
+
 
 function init() {
 	scenarioUI = document.getElementById("scenario");
@@ -31,6 +36,9 @@ function init() {
 	answerTwoUi = document.getElementById("answerTwo");
 	answerThreeUi = document.getElementById("answerThree");
 	displayTask(status)
+	answerOneUi.onclick = nextTask;
+	answerTwoUi.onclick = nextTask;
+	answerThreeUi.onclick = nextTask;
 }
 
 function displayTask(myStatus) {
