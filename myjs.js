@@ -7,20 +7,32 @@ class Task {
 	}
 }
 
-let taskOne = new Task("Task 1", "O1 T1", "O2 T2", "O3 T3");
-let taskTwo = new Task("Task 1", "O1 T1", "O2 T2", "O3 T3");
-let taskThree = new Task("Task 1", "O1 T1", "O2 T2", "O3 T3");
-let taskFour = new Task("Task 1", "O1 T1", "O2 T2", "O3 T3");
-let taskFive = new Task("Task 1", "O1 T1", "O2 T2", "O3 T3");
+let status = 0;
+
+
+
+let taskOne = new Task("Task 1", "O1 T1", "O2 T1", "O3 T1");
+let taskTwo = new Task("Task 2", "O1 T2", "O2 T2", "O3 T2");
+let taskThree = new Task("Task 3", "O1 T3", "O2 T3", "O3 T3");
+let taskFour = new Task("Task 4", "O1 T4", "O2 T4", "O3 T4");
+let taskFive = new Task("Task 5", "O1 T5", "O2 T5", "O3 T5");
+
+const arr = [taskOne, taskTwo, taskThree, taskFour, taskFive];
 
 let scenarioUI = document.getElementById("scenario");
 let answerOneUi = document.getElementById("answerOne");
 let answerTwoUi = document.getElementById("answerTwo");
 let answerThreeUi = document.getElementById("answerThree");
-scenarioUI.textContent = taskOne.scenario;
-answerOneUi.textContent = taskOne.optionOne;
-answerTwoUi.textContent = taskOne.optionTwo;
-answerThreeUi.textContent = taskOne.optionThree;
+
+function displayTask(myStatus) {
+	scenarioUI.textContent = arr[myStatus].scenario;
+	answerOneUi.textContent = arr[myStatus].optionOne;
+	answerTwoUi.textContent = arr[myStatus].optionTwo;
+	answerThreeUi.textContent = arr[myStatus].optionThree;
+}
+
+window.onload = displayTask(status);
+
 
 console.log(taskTwo);
  
