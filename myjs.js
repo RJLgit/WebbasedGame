@@ -17,6 +17,7 @@ class Option {
 }
 
 let status = 0;
+let optSelected = 0;
 
 
 
