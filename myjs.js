@@ -31,18 +31,19 @@ let taskTwo = new Task("Task 2", new Option("O1 T2", true, 5, false), new Option
 let taskThree = new Task("Task 3", new Option("O1 T3", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
 let taskFour = new Task("Task 4", new Option("O1 T4", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
 let taskFive = new Task("Task 5", new Option("O1 T5", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
-let taskSix = new Task("Task 1", new Option("O1 T6", true, 5, true), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
-let taskSeven = new Task("Task 2", new Option("O1 T7", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
-let taskEight = new Task("Task 3", new Option("O1 T8", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
-let taskNine = new Task("Task 4", new Option("O1 T9", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
-let taskTen = new Task("Task 5", new Option("O1 T10", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
-let taskEleven = new Task("Task 1", new Option("O1 T11", true, 5, true), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
-let taskTwelve = new Task("Task 2", new Option("O1 T12", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
-let taskThirteen = new Task("Task 3", new Option("O1 T13", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
-let taskFourteen = new Task("Task 4", new Option("O1 T14", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
-let taskFifteen = new Task("Task 5", new Option("O1 T15", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskSix = new Task("Task 6", new Option("O1 T6", true, 5, true), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskSeven = new Task("Task 7", new Option("O1 T7", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskEight = new Task("Task 8", new Option("O1 T8", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskNine = new Task("Task 9", new Option("O1 T9", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskTen = new Task("Task 10", new Option("O1 T10", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskEleven = new Task("Task 11", new Option("O1 T11", true, 5, true), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskTwelve = new Task("Task 12", new Option("O1 T12", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskThirteen = new Task("Task 13", new Option("O1 T13", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskFourteen = new Task("Task 14", new Option("O1 T14", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskFifteen = new Task("Task 15", new Option("O1 T15", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
 
-const arr = [taskOne, taskTwo, taskThree, taskFour, taskFive];
+const arr = [taskOne, taskTwo, taskThree, taskFour, taskFive, taskSix, taskSeven, taskEight, 
+taskNine, taskTen, taskEleven, taskTwelve, taskThirteen, taskFourteen, taskFifteen];
 
 let scenarioUI;
 let answerOneUi;
@@ -53,13 +54,46 @@ let buttonTryAgain;
 
 function nextTaskOne() {
 	let theOption = arr[status].optionOne;
+	
 	if (theOption.oppDead) {
 		gameOver();
 		gameOverVar = true;
 
 	}
+	if (theOption.promote) {
+		
+		switch (currentLevel) {
+			case 1:
+				currentLevel++;
+				status = 3;
+				console.log(status);
+				displayTask(status);
+				break;
+			case 2:
+				currentLevel++;
+				status = 6;
+				displayTask(status);
+				break;
+			case 3:
+				currentLevel++;
+				status = 9;
+				displayTask(status);
+				break;
+			case 4:
+				currentLevel++;
+				status = 12;
+				displayTask(status);
+				break;
+			case 5:
+				
+				wonGame();
+				gameOverVar = true;
 
-	if (!gameOverVar) {
+				break;
+		}
+	}
+
+	if (!gameOverVar && !theOption.promote) {
 		if (status < arr.length - 1) {
 		status++;
 
@@ -68,6 +102,15 @@ function nextTaskOne() {
 	}
 
 	
+}
+
+function wonGame() {
+	resultUI.textContent = "You have completed the game and are known as a great king";
+	resultUI.style.display = 'block';
+	buttonTryAgain.style.display = 'block';
+	answerOneUi.style.display = 'none';
+	answerTwoUi.style.display = 'none';
+	answerThreeUi.style.display = 'none';
 }
 
 function gameOver() {
@@ -79,6 +122,7 @@ function gameOver() {
 	answerThreeUi.style.display = 'none';
 }
 
+//need to put deah/promote functionality in these once they work for task 1 method
 function nextTaskTwo() {
 	let theOption = arr[status].optionTwo;
 	if (status < arr.length - 1) {
