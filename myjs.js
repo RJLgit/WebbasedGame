@@ -7,15 +7,24 @@ class Task {
 	}
 }
 
+class Option {
+	constructor(optionDescription, optionPromote, optionGold, optionDead) {
+		this.description = optionDescription;
+		this.promote = optionPromote;
+		this.oppGold = optionGold;
+		this.oppDead = optionDead;
+	}
+}
+
 let status = 0;
 
 
 
-let taskOne = new Task("Task 1", "O1 T1", "O2 T1", "O3 T1");
-let taskTwo = new Task("Task 2", "O1 T2", "O2 T2", "O3 T2");
-let taskThree = new Task("Task 3", "O1 T3", "O2 T3", "O3 T3");
-let taskFour = new Task("Task 4", "O1 T4", "O2 T4", "O3 T4");
-let taskFive = new Task("Task 5", "O1 T5", "O2 T5", "O3 T5");
+let taskOne = new Task("Task 1", new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskTwo = new Task("Task 2", new Option("O1 T2", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskThree = new Task("Task 3", new Option("O1 T3", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskFour = new Task("Task 4", new Option("O1 T4", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskFive = new Task("Task 5", new Option("O1 T5", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
 
 const arr = [taskOne, taskTwo, taskThree, taskFour, taskFive];
 
@@ -46,9 +55,9 @@ function init() {
 
 function displayTask(myStatus) {
 	scenarioUI.textContent = arr[myStatus].scenario;
-	answerOneUi.textContent = arr[myStatus].optionOne;
-	answerTwoUi.textContent = arr[myStatus].optionTwo;
-	answerThreeUi.textContent = arr[myStatus].optionThree;
+	answerOneUi.textContent = arr[myStatus].optionOne.description;
+	answerTwoUi.textContent = arr[myStatus].optionTwo.description;
+	answerThreeUi.textContent = arr[myStatus].optionThree.description;
 }
 
 window.onload = init();
