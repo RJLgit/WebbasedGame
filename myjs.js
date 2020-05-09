@@ -19,10 +19,19 @@ let taskFive = new Task("Task 5", "O1 T5", "O2 T5", "O3 T5");
 
 const arr = [taskOne, taskTwo, taskThree, taskFour, taskFive];
 
-let scenarioUI = document.getElementById("scenario");
-let answerOneUi = document.getElementById("answerOne");
-let answerTwoUi = document.getElementById("answerTwo");
-let answerThreeUi = document.getElementById("answerThree");
+let scenarioUI;
+let answerOneUi;
+let answerTwoUi;
+let answerThreeUi;
+
+
+function init() {
+	scenarioUI = document.getElementById("scenario");
+	answerOneUi = document.getElementById("answerOne");
+	answerTwoUi = document.getElementById("answerTwo");
+	answerThreeUi = document.getElementById("answerThree");
+	displayTask(status)
+}
 
 function displayTask(myStatus) {
 	scenarioUI.textContent = arr[myStatus].scenario;
@@ -31,7 +40,7 @@ function displayTask(myStatus) {
 	answerThreeUi.textContent = arr[myStatus].optionThree;
 }
 
-window.onload = displayTask(status);
+window.onload = init();
 
 
 console.log(taskTwo);
