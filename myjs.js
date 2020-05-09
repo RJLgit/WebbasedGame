@@ -19,6 +19,7 @@ class Option {
 let status = 0;
 let optSelected = 0;
 let gameOverVar = false;
+let gold = 5;
 //level of user - i.e. peasent/king etc
 let currentLevel = 1;
 //Change this if add more tasks per level
@@ -53,9 +54,13 @@ let answerTwoUi;
 let answerThreeUi;
 let resultUI;
 let buttonTryAgain;
+let goldUi;
+let levelUi;
 
 function nextTaskOne() {
 	let theOption = arr[status].optionOne;
+
+	gold += theOption.optionGold;
 	
 	if (theOption.oppDead) {
 		gameOver();
@@ -154,6 +159,8 @@ function init() {
 	answerThreeUi = document.getElementById("answerThree");
 	resultUI = document.getElementById("resultElement");
 	buttonTryAgain = document.getElementById("buttonRetry");
+	goldUi = document.getElementById("gold");
+	levelUi = document.getElementById("level");
 	buttonTryAgain.style.display = 'none';
 	resultUI.style.display = 'none';
 	displayTask(status)
