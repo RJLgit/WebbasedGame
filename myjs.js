@@ -25,7 +25,10 @@ let answerTwoUi;
 let answerThreeUi;
 
 function nextTask() {
-	status++;
+	if (status < arr.length - 1) {
+		status++;
+
+	}
 	displayTask(status);
 }
 
