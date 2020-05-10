@@ -296,7 +296,7 @@ function displayTask(myStatus) {
 	answerThreeUi.textContent = arr[myStatus].optionThree.description;
 }
 
-window.onload = init();
+window.onload = init;
 
 
 console.log(taskTwo);
