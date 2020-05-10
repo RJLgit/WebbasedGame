@@ -57,6 +57,7 @@ let resultUI;
 let buttonTryAgain;
 let goldUi;
 let levelUi;
+let buttonContinue;
 
 function nextTaskOne() {
 	let theOption = arr[status].optionOne;
@@ -165,7 +166,8 @@ function init() {
 	goldUi = document.getElementById("gold");
 	levelUi = document.getElementById("level");
 	buttonTryAgain.style.display = 'none';
-	
+	buttonContinue = document.getElementById("buttonContinue");
+	buttonContinue.style.display = 'none';
 	displayTask(status)
 	answerOneUi.onclick = nextTaskOne;
 	answerTwoUi.onclick = nextTaskTwo;
