@@ -163,7 +163,7 @@ function init() {
 	goldUi = document.getElementById("gold");
 	levelUi = document.getElementById("level");
 	buttonTryAgain.style.display = 'none';
-	resultUI.style.display = 'none';
+	
 	displayTask(status)
 	answerOneUi.onclick = nextTaskOne;
 	answerTwoUi.onclick = nextTaskTwo;
