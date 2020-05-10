@@ -177,7 +177,26 @@ function init() {
 
 function displayTask(myStatus) {
 	goldUi.textContent = gold;
-	levelUi.textContent = currentLevel;
+	switch(currentLevel) {
+		case 1:
+				levelUi.textContent = "Peasant";
+				break;
+			case 2:
+				levelUi.textContent = "Land Owner";
+				break;
+			case 3:
+				levelUi.textContent = "Knight";
+				break;
+			case 4:
+				levelUi.textContent = "Lord of the Realm";
+				break;
+			case 5:
+				levelUi.textContent = "King";
+				break;
+
+	}
+
+	
 	scenarioUI.textContent = arr[myStatus].scenario;
 	answerOneUi.textContent = arr[myStatus].optionOne.description;
 	answerTwoUi.textContent = arr[myStatus].optionTwo.description;
