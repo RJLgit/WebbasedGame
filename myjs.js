@@ -8,11 +8,12 @@ class Task {
 }
 
 class Option {
-	constructor(optionDescription, optionPromote, optionGold, optionDead) {
+	constructor(optionDescription, optionPromote, optionGold, optionDead, optionResult) {
 		this.description = optionDescription;
 		this.promote = optionPromote;
 		this.oppGold = optionGold;
 		this.oppDead = optionDead;
+		this.oppResult = optionResult;
 	}
 }
 
@@ -29,21 +30,21 @@ let promoted = false;
 
 
 
-let taskOne = new Task("Task 1", new Option("O1 T1", true, 5, true), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
-let taskTwo = new Task("Task 2", new Option("O1 T2", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
-let taskThree = new Task("Task 3", new Option("O1 T3", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
-let taskFour = new Task("Task 4", new Option("O1 T4", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
-let taskFive = new Task("Task 5", new Option("O1 T5", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
-let taskSix = new Task("Task 6", new Option("O1 T6", true, 5, true), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
-let taskSeven = new Task("Task 7", new Option("O1 T7", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
-let taskEight = new Task("Task 8", new Option("O1 T8", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
-let taskNine = new Task("Task 9", new Option("O1 T9", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
-let taskTen = new Task("Task 10", new Option("O1 T10", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
-let taskEleven = new Task("Task 11", new Option("O1 T11", true, 5, true), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
-let taskTwelve = new Task("Task 12", new Option("O1 T12", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
-let taskThirteen = new Task("Task 13", new Option("O1 T13", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
-let taskFourteen = new Task("Task 14", new Option("O1 T14", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
-let taskFifteen = new Task("Task 15", new Option("O1 T15", true, 5, false), new Option("O1 T1", true, 5, false), new Option("O1 T1", true, 5, false));
+let taskOne = new Task("Task 1", new Option("O1 T1", true, 5, true, "Result1"), new Option("O1 T1", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
+let taskTwo = new Task("Task 2", new Option("O1 T2", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
+let taskThree = new Task("Task 3", new Option("O1 T3", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
+let taskFour = new Task("Task 4", new Option("O1 T4", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
+let taskFive = new Task("Task 5", new Option("O1 T5", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
+let taskSix = new Task("Task 6", new Option("O1 T6", true, 5, true, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
+let taskSeven = new Task("Task 7", new Option("O1 T7", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
+let taskEight = new Task("Task 8", new Option("O1 T8", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
+let taskNine = new Task("Task 9", new Option("O1 T9", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
+let taskTen = new Task("Task 10", new Option("O1 T10", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
+let taskEleven = new Task("Task 11", new Option("O1 T11", true, 5, true, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
+let taskTwelve = new Task("Task 12", new Option("O1 T12", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
+let taskThirteen = new Task("Task 13", new Option("O1 T13", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
+let taskFourteen = new Task("Task 14", new Option("O1 T14", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
+let taskFifteen = new Task("Task 15", new Option("O1 T15", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
 
 const arr = [taskOne, taskTwo, taskThree, taskFour, taskFive, taskSix, taskSeven, taskEight, 
 taskNine, taskTen, taskEleven, taskTwelve, taskThirteen, taskFourteen, taskFifteen];
