@@ -30,10 +30,10 @@ let promoted = false;
 
 
 
-let taskOne = new Task("Task 1", new Option("O1 T1", true, 5, true, "Result1"), new Option("O1 T1", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
-let taskTwo = new Task("Task 2", new Option("O1 T2", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
+let taskOne = new Task("Task 1", new Option("O1 T1", true, 5, true, "Result1"), new Option("O1 T1", false, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
+let taskTwo = new Task("Task 2", new Option("O1 T2", true, 5, false, "Result 2"), new Option("O1 T1", false, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
 let taskThree = new Task("Task 3", new Option("O1 T3", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
-let taskFour = new Task("Task 4", new Option("O1 T4", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
+let taskFour = new Task("Task 4", new Option("O1 T4", true, 5, false, "Result 2"), new Option("O1 T1", false, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
 let taskFive = new Task("Task 5", new Option("O1 T5", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
 let taskSix = new Task("Task 6", new Option("O1 T6", true, 5, true, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
 let taskSeven = new Task("Task 7", new Option("O1 T7", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"), new Option("O1 T1", true, 5, false, "Result 2"));
@@ -115,6 +115,115 @@ function nextTaskOne() {
 	
 }
 
+//need to put deah/promote functionality in these once they work for task 1 method
+function nextTaskTwo() {
+	let theOption = arr[status].optionTwo;
+
+
+	gold = gold + theOption.oppGold;
+	
+	if (theOption.oppDead) {
+		gameOver();
+		gameOverVar = true;
+
+	}
+	resultUI.textContent = theOption.oppResult;
+	if (theOption.promote) {
+		
+		switch (currentLevel) {
+			case 1:
+				currentLevel++;
+				status = numberOfQuestionsPerLevel;
+				console.log(status);
+				displayTask(status);
+				break;
+			case 2:
+				currentLevel++;
+				status = numberOfQuestionsPerLevel * 2;
+				displayTask(status);
+				break;
+			case 3:
+				currentLevel++;
+				status = numberOfQuestionsPerLevel * 3;
+				displayTask(status);
+				break;
+			case 4:
+				currentLevel++;
+				status = numberOfQuestionsPerLevel * 4;
+				displayTask(status);
+				break;
+			case 5:
+				
+				wonGame();
+				gameOverVar = true;
+
+				break;
+		}
+	}
+
+	if (!gameOverVar && !theOption.promote) {
+		if (status < arr.length - 1) {
+		status++;
+
+	}
+	displayTask(status);
+	}
+}
+
+function nextTaskThree() {
+	let theOption = arr[status].optionThree;
+
+
+	gold = gold + theOption.oppGold;
+	
+	if (theOption.oppDead) {
+		gameOver();
+		gameOverVar = true;
+
+	}
+	resultUI.textContent = theOption.oppResult;
+	if (theOption.promote) {
+		
+		switch (currentLevel) {
+			case 1:
+				currentLevel++;
+				status = numberOfQuestionsPerLevel;
+				console.log(status);
+				displayTask(status);
+				break;
+			case 2:
+				currentLevel++;
+				status = numberOfQuestionsPerLevel * 2;
+				displayTask(status);
+				break;
+			case 3:
+				currentLevel++;
+				status = numberOfQuestionsPerLevel * 3;
+				displayTask(status);
+				break;
+			case 4:
+				currentLevel++;
+				status = numberOfQuestionsPerLevel * 4;
+				displayTask(status);
+				break;
+			case 5:
+				
+				wonGame();
+				gameOverVar = true;
+
+				break;
+		}
+	}
+
+	if (!gameOverVar && !theOption.promote) {
+		if (status < arr.length - 1) {
+		status++;
+
+	}
+	displayTask(status);
+	}
+}
+
 function wonGame() {
 	resultUI.textContent = "You have completed the game and are known as a great king";
 	resultUI.style.display = 'block';
@@ -133,23 +242,7 @@ function gameOver() {
 	answerThreeUi.style.display = 'none';
 }
 
-//need to put deah/promote functionality in these once they work for task 1 method
-function nextTaskTwo() {
-	let theOption = arr[status].optionTwo;
-	if (status < arr.length - 1) {
-		status++;
 
-	}
-	displayTask(status);
-}
-function nextTaskThree() {
-	let theOption = arr[status].optionThree;
-	if (status < arr.length - 1) {
-		status++;
-
-	}
-	displayTask(status);
-}
 
 function retryTasks() {
 	console.log("retry");
