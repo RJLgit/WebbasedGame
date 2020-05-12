@@ -54,22 +54,22 @@ let taskSix = new Task("The battle has been going on for an hour. You see the en
 	new Option("Play dead until the battle ends", false, 0, true, "Your cowardice is noticed by your lord. He sends you back to your land and vows you shall never be promoted"), 
 	new Option("Sneak up on the Lord from behind and stab him in the back", true, 0, false, "You kill the enemy Lord. Your Lord promotes you to a Knight of the Realm."), 
 	new Option("Approach the Lord and challenge him to combat", false, 0, true, "The enemy Lord cuts you down with ease. Why did you think you could defeat him?"));
-let taskSeven = new Task("Task 7", 
-	new Option("O1 T7", true, 5, false, "Result 2"), 
-	new Option("O1 T1", true, 5, false, "Result 2"), 
-	new Option("O1 T1", true, 5, false, "Result 2"));
-let taskEight = new Task("Task 8", 
-	new Option("O1 T8", true, 5, false, "Result 2"), 
-	new Option("O1 T1", true, 5, false, "Result 2"), 
-	new Option("O1 T1", true, 5, false, "Result 2"));
-let taskNine = new Task("Task 9", 
-	new Option("O1 T9", true, 5, false, "Result 2"), 
-	new Option("O1 T1", true, 5, false, "Result 2"), 
-	new Option("O1 T1", true, 5, false, "Result 2"));
-let taskTen = new Task("Task 10", 
-	new Option("O1 T10", true, -5, false, "Result of your last action: The man took your 5 gold and didn't give you anything"), 
-	new Option("O1 T1", true, 5, false, "Result 2"), 
-	new Option("O1 T1", true, 5, false, "Result 2"));
+let taskSeven = new Task("Having been promoted to a Knight, you now have a lot of power. But you are also a target. The son of the lord you slayed is out for revenge. You receive information he is currently drunk and vulnerable in a nearby alehouse. What do you do?", 
+	new Option("Raise a small group of men to attack him in the alehouse", false, 0, false, "You stand by as your men kill the son. Their reward is the gold he carries so you get none."), 
+	new Option("Attack him on your own. He is a single drunk man", false, 50, false, "He does not notice you enter and you easily are able to take him by surprise and kill him. You take the 50 gold he has on him."), 
+	new Option("Visit him and demand gold for his safe passage", false, 200, false, "Outmatched by you, he agrees to pay you 200 gold for his safe passage"));
+let taskEight = new Task("The family of the lord you killed is still causing problems. His brother, who is now the lord, is talking openly of war with your lord. You lord summons you and asks you to lead the army to attack their stronghold. After a siege you break into the stronghold and arrest the enemy lord. What do you do?", 
+	new Option("Execute him and declare yourself lord", true, 0, false, "You become a lord of the realm"), 
+	new Option("Offer to leave if he pays you well", false, 500, false, "The lord pays you 500 gold and you leave with your army."), 
+	new Option("Challenge him to 1 on 1 combat to prove your dominance", false, 0, true, "Their lord kills you in combat!"));
+let taskNine = new Task("Your lord demands half of the 500 gold you got from your victory. What do you do?", 
+	new Option("Refuse to pay and murder your lord, declaring yourself lord in his place", true, 0, false, "Result 2"), 
+	new Option("Agree to pay your lord his share of the gold", true, 0, false, "Impressed by your honour, your lord names you his heir and announces his decision to retire."), 
+	new Option("Refuse to pay and attempt to walk away", false, 0, true, "Angry, your lord calls his archers to shoot you as you leave. He laughs at you as you die on the floor."));
+let taskTen = new Task("Now a lord of the realm you have a lot of responsibilities. The king is worried about a religious heresy in your area of control. He tells you of an old man who is thought to be behind the heresy. He tells you to sort it out. You summon a small force and you find the man alone in a field. What do you do?", 
+	new Option("Ride him down and leave him in the dirt", false, 0, true, "As soon as you charge an army of religious fanatics emerges from a nearby wood. They slaughter you and your men."), 
+	new Option("Apprach him alone to talk and find out more", false, 0, false, "He tells you about his hatred for the king, and claims he can overthrow him."), 
+	new Option("Order your archers to shoot him", false, 0, true, "You kill the religious man but an army of insensed religious fanatics emerges from a nearby wood. They slaughter you and your men."));
 let taskEleven = new Task("Task 11", 
 	new Option("O1 T11", true, 5, true, "Result 2"), 
 	new Option("O1 T1", true, 5, false, "Result 2"), 
