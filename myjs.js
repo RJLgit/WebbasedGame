@@ -70,26 +70,26 @@ let taskTen = new Task("Now a lord of the realm you have a lot of responsibiliti
 	new Option("Ride him down and leave him in the dirt", false, 0, true, "As soon as you charge an army of religious fanatics emerges from a nearby wood. They slaughter you and your men."), 
 	new Option("Apprach him alone to talk and find out more", false, 0, false, "He tells you about his hatred for the king, and claims he can overthrow him."), 
 	new Option("Order your archers to shoot him", false, 0, true, "You kill the religious man but an army of insensed religious fanatics emerges from a nearby wood. They slaughter you and your men."));
-let taskEleven = new Task("Task 11", 
-	new Option("O1 T11", true, 5, true, "Result 2"), 
-	new Option("O1 T1", true, 5, false, "Result 2"), 
-	new Option("O1 T1", true, 5, false, "Result 2"));
-let taskTwelve = new Task("Task 12", 
-	new Option("O1 T12", true, 5, false, "Result 2"), 
-	new Option("O1 T1", true, 5, false, "Result 2"), 
-	new Option("O1 T1", true, 5, false, "Result 2"));
-let taskThirteen = new Task("Task 13", 
-	new Option("O1 T13", true, 5, false, "Result 2"), 
-	new Option("O1 T1", true, 5, false, "Result 2"), 
-	new Option("O1 T1", true, 5, false, "Result 2"));
-let taskFourteen = new Task("Task 14", 
-	new Option("O1 T14", true, 5, false, "Result 2"), 
-	new Option("O1 T1", true, 5, false, "Result 2"), 
-	new Option("O1 T1", true, 5, false, "Result 2"));
-let taskFifteen = new Task("Task 15", 
-	new Option("O1 T15", true, 5, false, "Result 2"), 
-	new Option("O1 T1", true, 5, false, "Result 2"), 
-	new Option("O1 T1", true, 5, false, "Result 2"));
+let taskEleven = new Task("The religious man says that he has a heretic army ready to overthrow the king. He wants to know if you will join him, saying he will make you king or if you are loyal to the king? What do you do?", 
+	new Option("Agree to convert and join the religious man in a rebellion against the king", false, 0, true, "Together, you overthrow the king but in the midst the battle the religious man betrays you, stabbing you in the back. As you die he tells you that he will never follow another lord."), 
+	new Option("Challenge the religious man to 1 on 1 combat", true, 0, false, "You defeat the religious man in front of many of his followers. You declare that God has proven that you are the true leader. The followers join you, and together you overthrow the king and are crowned in his place"), 
+	new Option("Refuse to betray the king", false, 0, false, "You ride away without answering, intent on finding the king and telling him of the danger that is forming against him."));
+let taskTwelve = new Task("You must now give your news to the king. He will not be happy that you have failed to squash the heresy. What do you do?", 
+	new Option("Tell him the truth and that you will fight for the king always", false, 0, true, "The king accuses you of cowardice, and chops off your head."), 
+	new Option("Tell him that the religious man is loyal to him", false, 0, true, "The king looks into your eyes and sees your lie. He chops off your head for betraying him."), 
+	new Option("Tell him that you will track the religious man down and kill him", true, 0, false, "The king approves. You find the religious man and kill him. In gratitude the king names you his heir for you have saved the kingdom. Sadly, the king passes away soon after. Now you are king."));
+let taskThirteen = new Task("As king you must now control your lords and look to expand your land and wealth..for money and land is power. One of your ambitious lords approaches you and requests permission to raise an army to conquer land in your name. What do you do?", 
+	new Option("You deny his request as you do not trust him", false, 0, false, "The lord leaves in anger."), 
+	new Option("Tell him to raise the army but you will lead it", true, 150, false, "You successfully lead the army to conquer new lands. You become none as a great king, lauded throughout time."), 
+	new Option("Allow him to lead the army on your behalf", false, 0, true, "The lord decieved you. Once he has control of the army he attacks you instead. His army is too much, you are defeated in battle and slain in the field."));
+let taskFourteen = new Task("The angry lord is furious that you doubted his loyalty. You hear news that he is mustering troops. He says it is to conquer the land on your behalf but you fear his real target is you. What do you do?", 
+	new Option("Muster troops and ride against him immedietely", false, -25, true, "After spedning gold to hire men, you walk into an ambush, behaving exactly as the lord wanted you do. You and your men are slaughtered."), 
+	new Option("Muster troops in your fortress, and wait to see what happens", false, -25, false, "You spend gold to hire an army. Now you must wait to see what the lord does."), 
+	new Option("Call the lord to you and demand he stop raising an army.", false, 0, true, "The lord approaches your throne, then he takes a dagger out of his pocket and stabs you. As you die the lord laughs and tells you how your men worked with him as they despised how you came to the throne."));
+let taskFifteen = new Task("The Lord's aims are now clear. He has abandoned any stealth and marches on your fortress with his army. What do you do?", 
+	new Option("Set up an ambush for him before he reaches you", true, 0, false, "Your intelligence impresses your men. You ambush the lord before he reaches your fortress, killing him and routing his men. You are honoured as a great ruler of the nation throughout time."), 
+	new Option("Draw up your forces in the open field, and challenge him to battle.", true, 0, false, "Your optimism rubs off on your men. Morale is high for the battle. You army is victorious and you are honoured throughout time as a great ruler."), 
+	new Option("Stay in your fortress and wait for him to attack", false, 0, true, "Angered by your cowardice, your own men revolt against you. You are slaughtered in a riot as your people call you a coward."));
 
 const arr = [taskOne, taskTwo, taskThree, taskFour, taskFive, taskSix, taskSeven, taskEight, 
 taskNine, taskTen, taskEleven, taskTwelve, taskThirteen, taskFourteen, taskFifteen];
