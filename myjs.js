@@ -27,6 +27,7 @@ let currentLevel = 1;
 let numberOfQuestionsPerLevel = 3;
 //stores variable of whether user promoted. Maybe not needed?
 let promoted = false;
+let score = 0;
 
 
 
@@ -217,7 +218,7 @@ function nextTaskTwo() {
 
 function nextTaskThree() {
 	let theOption = arr[status].optionThree;
-
+	resultUI.textContent = theOption.oppResult;
 
 	gold = gold + theOption.oppGold;
 	
@@ -226,7 +227,7 @@ function nextTaskThree() {
 		gameOverVar = true;
 
 	}
-	resultUI.textContent = theOption.oppResult;
+	
 	if (theOption.promote) {
 		
 		switch (currentLevel) {
@@ -270,7 +271,6 @@ function nextTaskThree() {
 }
 
 function wonGame() {
-	resultUI.textContent = "You have completed the game and are known as a great king";
 	resultUI.style.display = 'block';
 	buttonTryAgain.style.display = 'block';
 	answerOneUi.style.display = 'none';
@@ -279,7 +279,6 @@ function wonGame() {
 }
 
 function gameOver() {
-	resultUI.textContent = "You Died";
 	resultUI.style.display = 'block';
 	buttonTryAgain.style.display = 'block';
 	answerOneUi.style.display = 'none';
