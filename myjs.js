@@ -104,6 +104,7 @@ let buttonTryAgain;
 let goldUi;
 let levelUi;
 let buttonContinue;
+let gameUi;
 
 function nextTaskOne() {
 	let theOption = arr[status].optionOne;
@@ -276,6 +277,8 @@ function wonGame() {
 	answerOneUi.style.display = 'none';
 	answerTwoUi.style.display = 'none';
 	answerThreeUi.style.display = 'none';
+	score = gold * currentLevel;
+	gameUi.style.display = 'none';
 }
 
 function gameOver() {
@@ -284,6 +287,8 @@ function gameOver() {
 	answerOneUi.style.display = 'none';
 	answerTwoUi.style.display = 'none';
 	answerThreeUi.style.display = 'none';
+	score = gold * currentLevel;
+	gameUi.style.display = 'none';
 }
 
 
@@ -302,6 +307,7 @@ function init() {
 	buttonTryAgain = document.getElementById("buttonRetry");
 	goldUi = document.getElementById("gold");
 	levelUi = document.getElementById("level");
+	gameUi = document.getElementById("gameUI")
 	buttonTryAgain.style.display = 'none';
 	buttonContinue = document.getElementById("buttonContinue");
 	buttonContinue.style.display = 'none';
