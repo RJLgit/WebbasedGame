@@ -49,7 +49,7 @@ let taskFour = new Task("As a land owner you now have many responsibilities. One
 	new Option("Rebuke the peasent for his audacity in approaching you", false, -5, false, "The angry peasent attacks you, knocking you out and taking 5 of your gold"));
 let taskFive = new Task("A representative for your Lord approaches you and says that your Lord is in conflict with another nearby Lord. He demands your military service to support him. What do you do?", 
 	new Option("Agree to the service", false, 5, false, "The representive gives you 5 gold and you follow him to the army."), 
-	new Option("Refuse to serve, it is not your fight", false, 5, true, "The representative calls you a traitor and kills you."), 
+	new Option("Refuse to serve, it is not your fight", false, 0, true, "The representative calls you a traitor and kills you."), 
 	new Option("Demand more gold to serve", false, 15, false, "The representative is annoyed but gives you 15 gold and you follow him to the army"));
 let taskSix = new Task("The battle has been going on for an hour. You see the enemy Lord just ahead of you on the battlefield. He is a huge man, smiting all those who approach him. What do you do?", 
 	new Option("Play dead until the battle ends", false, 0, true, "Your cowardice is noticed by your lord. He sends you back to your land and vows you shall never be promoted"), 
@@ -280,7 +280,7 @@ function wonGame() {
 	answerThreeUi.style.display = 'none';
 	score = gold * currentLevel;
 	gameUi.style.display = 'none';
-	scoreUi.textContent = "" + score;
+	scoreUi.textContent = "You reached the level of " + getTextLevel(currentLevel) + ". Your final gold was " + gold + ". Your final score was " + score;
 }
 
 function gameOver() {
@@ -291,7 +291,30 @@ function gameOver() {
 	answerThreeUi.style.display = 'none';
 	score = gold * currentLevel;
 	gameUi.style.display = 'none';
-	scoreUi.textContent = "" + score;
+	scoreUi.textContent = "You reached the level of " + getTextLevel(currentLevel) + ". Your final gold was " + gold + ". Your final score was " + score;
+}
+
+function getTextLevel(lev) {
+	switch(lev) {
+		case 1:
+				return "Peasant";
+				break;
+			case 2:
+				return "LandOwner";
+				break;
+			case 3:
+				return "Knight";
+				break;
+			case 4:
+				return "Lord";
+				break;
+			case 5:
+				return "King";
+				break;
+			default:
+				return "Peasant";
+				break;
+	}
 }
 
 
