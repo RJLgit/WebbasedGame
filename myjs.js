@@ -279,7 +279,9 @@ function wonGame() {
 	answerTwoUi.style.display = 'none';
 	answerThreeUi.style.display = 'none';
 	score = gold * currentLevel;
-	gameUi.style.display = 'none';
+	for (i = 0; i < gameUi.length; i++) {
+		gameUi[i].style.display = 'none';
+	}
 	scoreUi.textContent = "You reached the level of " + getTextLevel(currentLevel) + ". Your final gold was " + gold + ". Your final score was " + score;
 }
 
@@ -290,7 +292,9 @@ function gameOver() {
 	answerTwoUi.style.display = 'none';
 	answerThreeUi.style.display = 'none';
 	score = gold * currentLevel;
-	gameUi.style.display = 'none';
+	for (i = 0; i < gameUi.length; i++) {
+		gameUi[i].style.display = 'none';
+	}
 	scoreUi.textContent = "You reached the level of " + getTextLevel(currentLevel) + ". Your final gold was " + gold + ". Your final score was " + score;
 }
 
@@ -333,7 +337,7 @@ function init() {
 	buttonTryAgain = document.getElementById("buttonRetry");
 	goldUi = document.getElementById("gold");
 	levelUi = document.getElementById("level");
-	gameUi = document.getElementById("gameUI");
+	gameUi = document.getElementsByClassName("gameUI");
 	scoreUi = document.getElementById("score");
 	buttonTryAgain.style.display = 'none';
 	buttonContinue = document.getElementById("buttonContinue");
