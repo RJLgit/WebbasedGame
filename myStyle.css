@@ -1,3 +1,17 @@
 #resultElement {
 	color: red;
 }
+#level {
+	padding: 0px;
+	margin: 0px;
+}
+#gold {
+	padding: 0px;
+	margin: 0px;
+}
+.headerInfo {
+	color: green;
+}
+#statusHeader {
+	border: solid;
+}
