@@ -287,6 +287,23 @@ function wonGame() {
 		gameUi[i].style.display = 'none';
 	}
 	scorePelement.textContent = "You reached the level of " + getTextLevel(currentLevel) + ". Your final gold was " + gold + ". Your final score was " + score;
+	switch(currentLevel) {
+		case 1:
+				scoreImage.src = "images/Peasant.png";
+				break;
+			case 2:
+				scoreImage.src = "images/landowner.png";
+				break;
+			case 3:
+				scoreImage.src = "images/knight.png";
+				break;
+			case 4:
+				scoreImage.src = "images/lord.png";
+				break;
+			case 5:
+				scoreImage.src = "images/king.png";
+				break;
+	}
 }
 
 function gameOver() {
