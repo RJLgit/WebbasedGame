@@ -106,6 +106,7 @@ let levelUi;
 let buttonContinue;
 let gameUi;
 let scoreUi;
+let image;
 
 function nextTaskOne() {
 	let theOption = arr[status].optionOne;
@@ -339,6 +340,7 @@ function init() {
 	levelUi = document.getElementById("level");
 	gameUi = document.getElementsByClassName("gameUI");
 	scoreUi = document.getElementById("score");
+	image = document.getElementById("levelImage");
 	buttonTryAgain.style.display = 'none';
 	buttonContinue = document.getElementById("buttonContinue");
 	buttonContinue.style.display = 'none';
@@ -354,18 +356,23 @@ function displayTask(myStatus) {
 	switch(currentLevel) {
 		case 1:
 				levelUi.textContent = "Peasant";
+				image.src = "images/Peasant.png";
 				break;
 			case 2:
 				levelUi.textContent = "Land Owner";
+				image.src = "images/landowner.png";
 				break;
 			case 3:
 				levelUi.textContent = "Knight";
+				image.src = "images/knight.png";
 				break;
 			case 4:
 				levelUi.textContent = "Lord of the Realm";
+				image.src = "images/lord.png";
 				break;
 			case 5:
 				levelUi.textContent = "King";
+				image.src = "images/king.png";
 				break;
 
 	}
