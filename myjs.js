@@ -105,8 +105,10 @@ let goldUi;
 let levelUi;
 let buttonContinue;
 let gameUi;
-let scoreUi;
+let scorePelement;
 let image;
+let scoreContainer;
+let scoreImage;
 
 function nextTaskOne() {
 	let theOption = arr[status].optionOne;
@@ -279,11 +281,12 @@ function wonGame() {
 	answerOneUi.style.display = 'none';
 	answerTwoUi.style.display = 'none';
 	answerThreeUi.style.display = 'none';
+	scoreContainer.style.display = 'block';
 	score = gold * currentLevel;
 	for (i = 0; i < gameUi.length; i++) {
 		gameUi[i].style.display = 'none';
 	}
-	scoreUi.textContent = "You reached the level of " + getTextLevel(currentLevel) + ". Your final gold was " + gold + ". Your final score was " + score;
+	scorePelement.textContent = "You reached the level of " + getTextLevel(currentLevel) + ". Your final gold was " + gold + ". Your final score was " + score;
 }
 
 function gameOver() {
@@ -292,11 +295,29 @@ function gameOver() {
 	answerOneUi.style.display = 'none';
 	answerTwoUi.style.display = 'none';
 	answerThreeUi.style.display = 'none';
+	scoreContainer.style.display = 'block';
 	score = gold * currentLevel;
 	for (i = 0; i < gameUi.length; i++) {
 		gameUi[i].style.display = 'none';
 	}
-	scoreUi.textContent = "You reached the level of " + getTextLevel(currentLevel) + ". Your final gold was " + gold + ". Your final score was " + score;
+	scorePelement.textContent = "You reached the level of " + getTextLevel(currentLevel) + ". Your final gold was " + gold + ". Your final score was " + score;
+	switch(currentLevel) {
+		case 1:
+				scoreImage.src = "images/Peasant.png";
+				break;
+			case 2:
+				scoreImage.src = "images/landowner.png";
+				break;
+			case 3:
+				scoreImage.src = "images/knight.png";
+				break;
+			case 4:
+				scoreImage.src = "images/lord.png";
+				break;
+			case 5:
+				scoreImage.src = "images/king.png";
+				break;
+	}
 }
 
 function getTextLevel(lev) {
@@ -339,8 +360,10 @@ function init() {
 	goldUi = document.getElementById("gold");
 	levelUi = document.getElementById("level");
 	gameUi = document.getElementsByClassName("gameUI");
-	scoreUi = document.getElementById("score");
+	scorePelement = document.getElementById("score");
 	image = document.getElementById("levelImage");
+	scoreContainer = document.getElementById("scoreContainer");
+	scoreImage = document.getElementById("finalImage");
 	buttonTryAgain.style.display = 'none';
 	buttonContinue = document.getElementById("buttonContinue");
 	buttonContinue.style.display = 'none';

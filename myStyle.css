@@ -15,3 +15,6 @@
 #statusHeader {
 	border: solid;
 } 
+#scoreContainer {
+	display: none;
+}
