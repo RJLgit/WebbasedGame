@@ -13,8 +13,26 @@
 	color: green;
 }
 #statusHeader {
+	position: relative;
 	border: solid;
+	
 } 
+#statusHeader:before {
+	content: ' ';
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0.2;
+	background-image: url('images/backimg.png');
+	background-size: cover;
+}
 #scoreContainer {
 	display: none;
+}
+#scenario {
+	background-color: #D3D3D3;
 }
