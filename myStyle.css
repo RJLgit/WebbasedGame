@@ -13,11 +13,15 @@
 	color: green;
 }
 #statusHeader {
-	position: relative;
+	
 	border: solid;
 	
 } 
-#statusHeader:before {
+#box-container {
+	position: relative;
+
+}
+#box-container:before {
 	content: ' ';
 	display: block;
 	position: absolute;
@@ -25,7 +29,7 @@
 	top: 0;
 	width: 100%;
 	height: 100%;
-	z-index: 1;
+	z-index: -1;
 	opacity: 0.2;
 	background-image: url('images/backimg.png');
 	background-size: cover;
