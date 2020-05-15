@@ -112,6 +112,7 @@ let scoreImage;
 
 function nextTaskOne() {
 	let theOption = arr[status].optionOne;
+	answerOneUi.blur();
 
 
 	gold = gold + theOption.oppGold;
@@ -169,6 +170,7 @@ function nextTaskOne() {
 //need to put deah/promote functionality in these once they work for task 1 method
 function nextTaskTwo() {
 	let theOption = arr[status].optionTwo;
+	answerTwoUi.blur();
 
 
 	gold = gold + theOption.oppGold;
@@ -223,6 +225,7 @@ function nextTaskTwo() {
 
 function nextTaskThree() {
 	let theOption = arr[status].optionThree;
+	answerThreeUi.blur();
 	resultUI.textContent = theOption.oppResult;
 
 	gold = gold + theOption.oppGold;
