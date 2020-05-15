@@ -366,7 +366,24 @@ function getTextLevel(lev) {
 
 
 function retryTasks() {
-	console.log("retry");
+	
+status = 0;
+optSelected = 0;
+gameOverVar = false;
+gold = 5;
+currentLevel = 1;
+promoted = false;
+score = 0;
+resultUI.style.display = 'none';
+	buttonTryAgain.style.display = 'none';
+	answerOneUi.style.display = 'block';
+	answerTwoUi.style.display = 'block';
+	answerThreeUi.style.display = 'block';
+	scoreContainer.style.display = 'none';
+	for (i = 0; i < gameUi.length; i++) {
+		gameUi[i].style.display = 'block';
+	}
+	displayTask(status);
 }
 
 
