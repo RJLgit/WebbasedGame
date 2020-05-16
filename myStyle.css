@@ -1,6 +1,7 @@
 #resultElement {
 	color: red;
 	font-size: 2em;
+	font-style: italic;
 }
 #level {
 	padding: 0px;
