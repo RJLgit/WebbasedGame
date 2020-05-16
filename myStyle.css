@@ -4,10 +4,12 @@
 #level {
 	padding: 0px;
 	margin: 0px;
+	font-weight: bolder;
 }
 #gold {
 	padding: 0px;
 	margin: 0px;
+	font-weight: bolder;
 }
 .headerInfo {
 	color: green;
@@ -38,5 +40,5 @@
 	display: none;
 }
 #scenario {
-	background-color: #D3D3D3;
+	font-weight: bold;
 }
