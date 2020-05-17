@@ -44,6 +44,10 @@ let scorePelement;
 let image;
 let scoreContainer;
 let scoreImage;
+let sound = new Audio();
+sound.src = "Sounds/victory_sound.mp3";
+let failSound = new Audio();
+failSound.src = "Sounds/fail_sound.mp3"
 
 
 let taskOne = new Task("You are working the fields for your land-owner when an unknown man approaches you. He has a scar on his face and you feel an evil energy from him. He says if you murder your land-owner then he will forge the papers to give you the land. What do you do?", 
@@ -111,6 +115,7 @@ const arr = [taskOne, taskTwo, taskThree, taskFour, taskFive, taskSix, taskSeven
 taskNine, taskTen, taskEleven, taskTwelve, taskThirteen, taskFourteen, taskFifteen];
 
 function nextTaskOne() {
+	
 	let theOption = arr[status].optionOne;
 	answerOneUi.blur();
 
@@ -279,6 +284,7 @@ function nextTaskThree() {
 }
 
 function wonGame() {
+	sound.play();
 	resultUI.style.display = 'block';
 	buttonTryAgain.style.display = 'block';
 	answerOneUi.style.display = 'none';
@@ -310,6 +316,7 @@ function wonGame() {
 }
 
 function gameOver() {
+	failSound.play();
 	resultUI.style.display = 'block';
 	buttonTryAgain.style.display = 'block';
 	answerOneUi.style.display = 'none';
