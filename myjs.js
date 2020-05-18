@@ -52,7 +52,7 @@ let soundSetting;
 let soundOnOrOff = false;
 let music = new Audio();
 music.loop = true;
-music.src="Sounds/correct_sound.mp3";
+music.src="Sounds/music.mp3";
 
 
 
