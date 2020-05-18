@@ -50,6 +50,10 @@ let failSound = new Audio();
 failSound.src = "Sounds/fail_sound.mp3";
 let soundSetting;
 let soundOnOrOff = false;
+let music = new Audio();
+music.loop = true;
+music.src="Sounds/correct_sound.mp3";
+
 
 
 let taskOne = new Task("You are working the fields for your land-owner when an unknown man approaches you. He has a scar on his face and you feel an evil energy from him. He says if you murder your land-owner then he will forge the papers to give you the land. What do you do?", 
@@ -420,8 +424,10 @@ function init() {
 	soundSetting.addEventListener( 'change', function() {
     if(this.checked) {
         soundOnOrOff = true;
+        music.play();
     } else {
        soundOnOrOff = false;
+       music.pause();
     }
 });
 	buttonTryAgain.style.display = 'none';
@@ -432,6 +438,7 @@ function init() {
 	answerTwoUi.onclick = nextTaskTwo;
 	answerThreeUi.onclick = nextTaskThree;
 	buttonTryAgain.onclick = retryTasks;
+
 }
 
 function displayTask(myStatus) {
