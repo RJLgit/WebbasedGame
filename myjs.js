@@ -44,6 +44,7 @@ let scorePelement;
 let image;
 let scoreContainer;
 let scoreImage;
+let myProgressBar;
 let sound = new Audio();
 sound.src = "Sounds/victory_sound.mp3";
 let failSound = new Audio();
@@ -419,6 +420,7 @@ function init() {
 	scorePelement = document.getElementById("score");
 	image = document.getElementById("levelImage");
 	scoreContainer = document.getElementById("scoreContainer");
+	myProgressBar = document.getElementById("myprogress");
 	scoreImage = document.getElementById("finalImage");
 	soundSetting = document.getElementById("soundOnOff");
 	soundSetting.addEventListener( 'change', function() {
@@ -446,22 +448,27 @@ function displayTask(myStatus) {
 	switch(currentLevel) {
 		case 1:
 				levelUi.textContent = "Peasant";
+				myProgressBar.style.width = "0%";
 				image.src = "images/Peasant.png";
 				break;
 			case 2:
 				levelUi.textContent = "Land Owner";
+				myProgressBar.style.width = "20%";
 				image.src = "images/landowner.png";
 				break;
 			case 3:
 				levelUi.textContent = "Knight";
+				myProgressBar.style.width = "40%";
 				image.src = "images/knight.png";
 				break;
 			case 4:
 				levelUi.textContent = "Lord of the Realm";
+				myProgressBar.style.width = "60%";
 				image.src = "images/lord.png";
 				break;
 			case 5:
 				levelUi.textContent = "King";
+				myProgressBar.style.width = "80%";
 				image.src = "images/king.png";
 				break;
 
