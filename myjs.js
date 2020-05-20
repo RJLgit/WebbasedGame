@@ -121,12 +121,10 @@ let taskFifteen = new Task("The Lord's aims are now clear. He has abandoned any 
 const arr = [taskOne, taskTwo, taskThree, taskFour, taskFive, taskSix, taskSeven, taskEight, 
 taskNine, taskTen, taskEleven, taskTwelve, taskThirteen, taskFourteen, taskFifteen];
 
+//Method triggered when click first option
 function nextTaskOne() {
-	
 	let theOption = arr[status].optionOne;
 	answerOneUi.blur();
-
-
 	gold = gold + theOption.oppGold;
 	
 	if (theOption.oppDead) {
@@ -149,7 +147,7 @@ function nextTaskOne() {
 
 }
 
-//need to put deah/promote functionality in these once they work for task 1 method
+//Method triggered when second option clicked
 function nextTaskTwo() {
 	let theOption = arr[status].optionTwo;
 	answerTwoUi.blur();
@@ -174,6 +172,7 @@ function nextTaskTwo() {
 	}
 }
 
+//Method triggered when third option clicked
 function nextTaskThree() {
 	let theOption = arr[status].optionThree;
 	answerThreeUi.blur();
@@ -201,6 +200,7 @@ function nextTaskThree() {
 	}
 }
 
+//Helper function for when option causes promotion of level
 function promotedFunc(curr) {
 	switch (curr) {
 			case 1:
@@ -233,6 +233,7 @@ function promotedFunc(curr) {
 		}
 }
 
+//Method triggered when the game is won
 function wonGame() {
 	if (soundOnOrOff) {
 		sound.play();
@@ -241,6 +242,7 @@ function wonGame() {
 	endScreen();
 }
 
+//Method triggered when user dies, and game is not won
 function gameOver() {
 	if (soundOnOrOff) {
 		failSound.play();
@@ -249,6 +251,7 @@ function gameOver() {
 	endScreen();
 }
 
+//Helper function for when the game ends, won or not.
 function endScreen() {
 	resultUI.style.display = 'block';
 	buttonTryAgain.style.display = 'block';
@@ -280,6 +283,7 @@ function endScreen() {
 	}
 }
 
+//Converts the level of the user into the text representation
 function getTextLevel(lev) {
 	switch(lev) {
 		case 1:
@@ -304,7 +308,7 @@ function getTextLevel(lev) {
 }
 
 
-
+//Method that occurs when the retry button is pressed at end game screen
 function retryTasks() {
 	
 status = 0;
@@ -326,7 +330,7 @@ resultUI.textContent = "";
 	displayTask(status);
 }
 
-
+//Method triggered when web page originally loaded.
 function init() {
 	scenarioUI = document.getElementById("scenario");
 	answerOneUi = document.getElementById("answerOne");
@@ -363,6 +367,7 @@ function init() {
 
 }
 
+//Helper method to display the next task
 function displayTask(myStatus) {
 	goldUi.textContent = gold;
 	switch(currentLevel) {
