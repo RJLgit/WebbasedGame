@@ -136,36 +136,7 @@ function nextTaskOne() {
 	}
 	resultUI.textContent = theOption.oppResult;
 	if (theOption.promote) {
-		
-		switch (currentLevel) {
-			case 1:
-				currentLevel++;
-				status = numberOfQuestionsPerLevel;
-				console.log(status);
-				displayTask(status);
-				break;
-			case 2:
-				currentLevel++;
-				status = numberOfQuestionsPerLevel * 2;
-				displayTask(status);
-				break;
-			case 3:
-				currentLevel++;
-				status = numberOfQuestionsPerLevel * 3;
-				displayTask(status);
-				break;
-			case 4:
-				currentLevel++;
-				status = numberOfQuestionsPerLevel * 4;
-				displayTask(status);
-				break;
-			case 5:
-				
-				wonGame();
-				gameOverVar = true;
-
-				break;
-		}
+		promotedFunc(currentLevel);
 	}
 
 	if (!gameOverVar && !theOption.promote) {
@@ -176,7 +147,6 @@ function nextTaskOne() {
 	displayTask(status);
 	}
 
-	
 }
 
 //need to put deah/promote functionality in these once they work for task 1 method
@@ -194,36 +164,7 @@ function nextTaskTwo() {
 	}
 	resultUI.textContent = theOption.oppResult;
 	if (theOption.promote) {
-		
-		switch (currentLevel) {
-			case 1:
-				currentLevel++;
-				status = numberOfQuestionsPerLevel;
-				console.log(status);
-				displayTask(status);
-				break;
-			case 2:
-				currentLevel++;
-				status = numberOfQuestionsPerLevel * 2;
-				displayTask(status);
-				break;
-			case 3:
-				currentLevel++;
-				status = numberOfQuestionsPerLevel * 3;
-				displayTask(status);
-				break;
-			case 4:
-				currentLevel++;
-				status = numberOfQuestionsPerLevel * 4;
-				displayTask(status);
-				break;
-			case 5:
-				
-				wonGame();
-				gameOverVar = true;
-
-				break;
-		}
+		promotedFunc(currentLevel);
 	}
 
 	if (!gameOverVar && !theOption.promote) {
@@ -249,8 +190,21 @@ function nextTaskThree() {
 	}
 	
 	if (theOption.promote) {
+		promotedFunc(currentLevel);
 		
-		switch (currentLevel) {
+	}
+
+	if (!gameOverVar && !theOption.promote) {
+		if (status < arr.length - 1) {
+		status++;
+
+	}
+	displayTask(status);
+	}
+}
+
+function promotedFunc(curr) {
+	switch (curr) {
 			case 1:
 				currentLevel++;
 				status = numberOfQuestionsPerLevel;
@@ -279,15 +233,6 @@ function nextTaskThree() {
 
 				break;
 		}
-	}
-
-	if (!gameOverVar && !theOption.promote) {
-		if (status < arr.length - 1) {
-		status++;
-
-	}
-	displayTask(status);
-	}
 }
 
 function wonGame() {
