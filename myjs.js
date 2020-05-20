@@ -153,10 +153,8 @@ function nextTaskOne() {
 function nextTaskTwo() {
 	let theOption = arr[status].optionTwo;
 	answerTwoUi.blur();
+	gold = gold + theOption.oppGold;	
 
-
-	gold = gold + theOption.oppGold;
-	
 	if (theOption.oppDead) {
 		gameOver();
 		gameOverVar = true;
@@ -240,34 +238,7 @@ function wonGame() {
 		sound.play();
 	}
 	
-	resultUI.style.display = 'block';
-	buttonTryAgain.style.display = 'block';
-	answerOneUi.style.display = 'none';
-	answerTwoUi.style.display = 'none';
-	answerThreeUi.style.display = 'none';
-	scoreContainer.style.display = 'block';
-	score = gold * currentLevel;
-	for (i = 0; i < gameUi.length; i++) {
-		gameUi[i].style.display = 'none';
-	}
-	scorePelement.textContent = "You reached the level of " + getTextLevel(currentLevel) + ". Your final gold was " + gold + ". Your final score was " + score;
-	switch(currentLevel) {
-		case 1:
-				scoreImage.src = "images/Peasant.png";
-				break;
-			case 2:
-				scoreImage.src = "images/landowner.png";
-				break;
-			case 3:
-				scoreImage.src = "images/knight.png";
-				break;
-			case 4:
-				scoreImage.src = "images/lord.png";
-				break;
-			case 5:
-				scoreImage.src = "images/king.png";
-				break;
-	}
+	endScreen();
 }
 
 function gameOver() {
@@ -275,6 +246,10 @@ function gameOver() {
 		failSound.play();
 	}
 	
+	endScreen();
+}
+
+function endScreen() {
 	resultUI.style.display = 'block';
 	buttonTryAgain.style.display = 'block';
 	answerOneUi.style.display = 'none';
